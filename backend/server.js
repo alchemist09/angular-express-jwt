@@ -20,8 +20,15 @@ const isAuthenticated = ({email, passowrd}) => {
 }
 
 server.post('/auth/login', (req, res) => {
+  // const keys = Object.keys(req.body);
+  // const values = Object.values(req.body);
+  // console.log("Object Keys: " + keys);
+  // console.log("Object Values: " + values);
+  // console.log("Request Body Email: " + req.body.email);
+  // return res.json({"Request Body Email": req.body.email}); 
+  
   const { email, passowrd } = req.body;
-  if (isAuthenticated(email, passowrd) === false) {
+  if (isAuthenticated({ email, passowrd }) === false) {
     const status = 401;
     const message = 'Incorrect email or password';
     res.status(status).json(status, message);
@@ -52,4 +59,9 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
       res.status(status).json({ status, message });
     }
   }
+});
+
+server.use(router);
+server.listen(3000, () => {
+  console.log('Server running on port 3000...');
 })
