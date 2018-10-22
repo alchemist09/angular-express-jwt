@@ -33,19 +33,19 @@ export class ApiService {
     return links;
   }
 
-  public createContact(contact: Contact) {
+  createContact(contact: Contact) {
     return this.httpClient.post(`${this.apiURL}/contacts/`, contact);
   }
 
-  public updateContact(contact: Contact) {
+  updateContact(contact: Contact) {
     return this.httpClient.put(`${this.apiURL}/contacts/${contact.id}`, contact);
   }
 
-  public deleteContact(id: number) {
+  deleteContact(id: number) {
     return this.httpClient.delete(`${this.apiURL}/contacts/${id}`);
   }
 
-  public getContacts(url?: string) {
+   getContacts(url?: string) {
     if (url) {
       return this.httpClient.get<Contact[]>(url, { observe: 'response' })
         .pipe(tap(res => {
@@ -71,7 +71,7 @@ export class ApiService {
       }));
   }
 
-  public getContactById(id: number) {
+  getContactById(id: number) {
     return this.httpClient.get<Contact>(`${this.apiURL}/contacts/${id}`);
   }
 }
