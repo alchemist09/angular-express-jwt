@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { routingModule } from './routing.module';
 
 import { AppComponent } from './app.component';
@@ -18,7 +19,8 @@ import { ContactDetailComponent } from './contact-detail/contact-detail.componen
   ],
   imports: [
     BrowserModule,
-    routingModule
+    routingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
