@@ -70,4 +70,8 @@ export class ApiService {
         console.log(Link);
       }));
   }
+
+  public getContactById(id: number) {
+    return this.httpClient.get<Contact>(`${this.apiURL}/contacts/${id}`);
+  }
 }
