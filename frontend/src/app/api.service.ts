@@ -35,4 +35,12 @@ export class ApiService {
   public createContact(contact: Contact) {
     return this.httpClient.post(`${this.apiURL}/contacts/`, contact);
   }
+
+  public updateContact(contact: Contact) {
+    return this.httpClient.put(`${this.apiURL}/contacts/${contact.id}`, contact);
+  }
+
+  public deleteContact(contact: Contact) {
+    return this.httpClient.delete(`${this.apiURL}/contacts/${contact.id}`);
+  }
 }
