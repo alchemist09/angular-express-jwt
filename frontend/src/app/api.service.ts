@@ -43,4 +43,30 @@ export class ApiService {
   public deleteContact(contact: Contact) {
     return this.httpClient.delete(`${this.apiURL}/contacts/${contact.id}`);
   }
+
+  public getContacts(url?: string) {
+    if (url) {
+      return this.httpClient.get<Contact[]>(url, { observe: 'response' })
+        .pipe(tap(res => {
+          const Link = this.parse_link_header(res.headers.get('Link'));
+          this.first = Link['first'];
+          this.last  = Link['last'];
+          this.prev  = Link['prev'];
+          this.next  = Link['next'];
+          console.log(Link);
+          console.log(`Getting ${url}`);
+        }))
+    }
+
+    return this.httpClient.get<Contact[]>(`${this.apiURL}/contacts?_page=1`, { observe: 'response'})
+      .pipe(tap(res => {
+        const Link = this.parse_link_header(res.headers.get('Link'));
+        this.first = Link['first'];
+        this.last  = Link['last'];
+        this.prev  = Link['prev'];
+        this.next  = Link['next'];
+        console.log('first page');
+        console.log(Link);
+      }));
+  }
 }
