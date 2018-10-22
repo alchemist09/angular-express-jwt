@@ -41,8 +41,8 @@ export class ApiService {
     return this.httpClient.put(`${this.apiURL}/contacts/${contact.id}`, contact);
   }
 
-  public deleteContact(contact: Contact) {
-    return this.httpClient.delete(`${this.apiURL}/contacts/${contact.id}`);
+  public deleteContact(id: number) {
+    return this.httpClient.delete(`${this.apiURL}/contacts/${id}`);
   }
 
   public getContacts(url?: string) {
