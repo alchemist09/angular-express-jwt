@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-contact-create',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ContactCreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
   }
@@ -36,6 +37,15 @@ export class ContactCreateComponent implements OnInit {
 
   onSubmit() {
     console.log(this.contactForm.value);
+    this.apiService.createContact(this.contactForm.value)
+      .subscribe(res => {
+        alert("Successfully created!");
+        this.contactForm.reset();
+      }, err => {
+        alert('Error');
+        console.log(err);
+        this.contactForm.reset();
+      });
   }
 
 }
