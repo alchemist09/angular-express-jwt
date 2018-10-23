@@ -6,9 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { 
   MatToolbarModule, 
   MatButtonModule, 
-  MatInputModule, 
-  MatFormField, 
-  MatFormFieldModule
+  MatInputModule,
+  MatFormFieldModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
