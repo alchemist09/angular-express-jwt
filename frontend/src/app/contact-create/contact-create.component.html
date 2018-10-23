@@ -1,3 +1,41 @@
-<p>
-  contact-create works!
-</p>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="First Name" type="text" formControlName="firstName" name="firstName" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Last Name" type="text" formControlName="lastName" name="lastName" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email" type="email" formControlName="email" name="email" />
+    <div *ngIf="email.touched && email.errors">
+      <span *ngIf="email.errors.required">
+        The email is required
+      </span>
+    </div>
+    <div *ngIf="email.errors">
+      <span *ngIf="email.errors.pattern">
+        The email is not valid
+      </span>
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Phone" type="text" formControlName="phone" name="phone" />
+    <div *ngIf="phone.errors">
+      <span *ngIf="phone.errors.pattern">
+        The phone is not valid
+      </span>
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="City" type="text" formControlName="city" name="city" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Country" type="text" formControlName="country" name="country" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Job Title" type="text" formControlName="title" name="title" />
+  </mat-form-field>
+  
+  <button type="submit">Create</button>
+</form>
