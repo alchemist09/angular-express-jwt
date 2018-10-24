@@ -8,6 +8,7 @@ import {
   MatButtonModule, 
   MatInputModule,
   MatFormFieldModule,
+  MatTableModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -30,12 +31,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     routingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatToolbarModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
