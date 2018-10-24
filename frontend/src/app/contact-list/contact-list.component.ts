@@ -21,4 +21,32 @@ export class ContactListComponent implements OnInit {
     })
   }
 
+  previousPage() {
+    this.apiService.getContacts(this.apiService.prev).subscribe(res => {
+      console.log(res.body);
+      this.dataSource = res.body;
+    });
+  }
+
+  nextPage() {
+    this.apiService.getContacts(this.apiService.next).subscribe(res => {
+      console.log(res.body);
+      this.dataSource = res.body;
+    });
+  }
+
+  firstPage() {
+    this.apiService.getContacts(this.apiService.first).subscribe(res => {
+      console.log(res.body);
+      this.dataSource = res.body;
+    });
+  }
+
+  lastPage() {
+    this.apiService.getContacts(this.apiService.last).subscribe(res => {
+      console.log(res.body);
+      this.dataSource = res.body;
+    });
+  }
+
 }
