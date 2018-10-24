@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { routingModule } from './routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
 import { 
   MatToolbarModule, 
   MatButtonModule, 
@@ -41,7 +42,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatToolbarModule,
     MatTableModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function(){
+          return localStorage.getItem('access_token');
+        },
+        whitelistedDomains: ['localhost:3000'],
+        blacklistedRoutes: ['http://localhost:3000/auth/login']
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
