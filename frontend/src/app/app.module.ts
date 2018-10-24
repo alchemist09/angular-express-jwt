@@ -8,7 +8,9 @@ import {
   MatButtonModule, 
   MatInputModule,
   MatFormFieldModule,
-  MatTableModule
+  MatTableModule,
+  MatDialogModule,
+  MatCardModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -37,7 +39,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatButtonModule,
     MatToolbarModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
