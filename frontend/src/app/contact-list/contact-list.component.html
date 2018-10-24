@@ -27,3 +27,10 @@
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
+
+<div style="display: grid;  grid-template-columns: 1fr 1fr 1fr 1fr; ">
+  <button (click)="firstPage()" mat-raised-button color="primary">First</button>
+  <button (click)="previousPage()" mat-raised-button color="primary">Previous</button>
+  <button (click)="nextPage()" mat-raised-button color="primary">Next</button>
+  <button (click)="lastPage()" mat-raised-button color="primary">Last</button>
+</div>
