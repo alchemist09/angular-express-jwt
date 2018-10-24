@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ApiService } from '../api.service';
 import { Contact } from '../contact';
+import { ContactDetailComponent } from '../contact-detail/contact-detail.component';
 
 @Component({
   selector: 'app-contact-list',
@@ -13,7 +15,10 @@ export class ContactListComponent implements OnInit {
 
   dataSource = []
 
-  constructor(private apiService: ApiService) { }
+  constructor(
+    private apiService: ApiService,
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit() {
     this.apiService.getContacts().subscribe(res => {
@@ -47,6 +52,18 @@ export class ContactListComponent implements OnInit {
       console.log(res.body);
       this.dataSource = res.body;
     });
+  }
+
+  openDialog(contact: Contact): void {
+    console.log(contact);
+    const dialogRef = this.dialog.open(ContactDetailComponent, {
+      width: '400px',
+      data: contact
+    });
+
+    dialogRef.afterClosed().subscribe(res => {
+      console.log('The dialog was closed');
+    })
   }
 
 }
