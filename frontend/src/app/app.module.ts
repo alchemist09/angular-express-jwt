@@ -20,6 +20,7 @@ import { ContactCreateComponent } from './contact-create/contact-create.componen
 import { ContactUpdateComponent } from './contact-update/contact-update.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContactListComponent,
     ContactCreateComponent,
     ContactUpdateComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
