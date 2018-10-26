@@ -6,6 +6,7 @@
   <a mat-button routerLink="contact-list">Contacts</a>
   <a mat-button routerLink="contact-create">Create Contact</a>
   <a mat-button routerLink="login">Login</a>
+  <a mat-button (click)="logOut()" *ngIf="jwtService.loggedIn()">Logout</a>
 </mat-toolbar>
 <router-outlet></router-outlet>
 
