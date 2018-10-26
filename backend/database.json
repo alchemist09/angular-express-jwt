@@ -1204,13 +1204,13 @@
   "contacts": [
     {
       "id": 1,
-      "firstName": "Deshaun",
-      "lastName": "Bins",
-      "email": "Lucinda_Deckow@hotmail.com",
-      "phone": "(071) 480-0042 x9415",
-      "city": "Montystad",
-      "country": "Faroe Islands",
-      "title": "Corporate Intranet Facilitator"
+      "firstName": "Al",
+      "lastName": "Chemist",
+      "email": "al.chemist@gmail.com",
+      "phone": "(254) 771-0264",
+      "city": "Nairobi",
+      "country": "Kenya",
+      "title": "Software Engineer"
     },
     {
       "id": 2,
@@ -3203,14 +3203,14 @@
       "title": "Central Metrics Analyst"
     },
     {
-      "id": "201",
-      "firstname": "luke",
-      "lastname": "olali",
-      "email": "alchemist09@gmail.com",
-      "phone": "254-719-644-479",
+      "id": 202,
+      "firstName": "Luke",
+      "lastName": "Muga",
+      "email": "mugapedia@gmail.com",
+      "phone": "(254) 719-6447",
       "city": "Nairobi",
       "country": "Kenya",
-      "title": "Resident Hacker"
+      "title": "Software Developer"
     }
   ]
 }
