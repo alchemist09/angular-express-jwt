@@ -11,7 +11,7 @@ export class JwtService {
 
   login(email: string, password: string) {
     return this.httpClient.post<{access_token: string}>
-    ('/auth/login', { email, password })
+    ('http://localhost:3000/auth/login', { email, password })
     .pipe(tap(res => {
       localStorage.setItem('access_token', res.access_token);
     }))
