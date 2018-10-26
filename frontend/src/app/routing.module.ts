@@ -4,8 +4,10 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactCreateComponent } from './contact-create/contact-create.component';
 import { ContactUpdateComponent } from './contact-update/contact-update.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent },
   { path: 'contact-list', component: ContactListComponent },
   { path: 'contact-create', component: ContactCreateComponent },
   { path: 'contact-update', component: ContactUpdateComponent },
