@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './services/authguard/auth.guard';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactCreateComponent } from './contact-create/contact-create.component';
 import { ContactUpdateComponent } from './contact-update/contact-update.component';

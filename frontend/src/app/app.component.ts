@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from './api.service';
-import { JwtService } from './jwt.service';
+import { ApiService } from './services/api_srv/api.service';
+import { JwtService } from './services/jwt/jwt.service';
 import { Router } from '@angular/router';
 
 @Component({

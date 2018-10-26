@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { ApiService } from '../api.service';
+import { ApiService } from '../services/api_srv/api.service';
 import { Contact } from '../contact';
 import { ContactDetailComponent } from '../contact-detail/contact-detail.component';
 
